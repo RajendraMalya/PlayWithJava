@@ -1,0 +1,8 @@
+Try to find the limits - what is the maximum number of threads you can create in your machine?
+ANS:
+32-bit processes can only address 4 GB of memory, which will fit about 2,000 threads with the default 1 MB stack allocation per thread or about 12,000 with the smallest possible allocation of 64 KB per thread. 64-bit processes don't have problems with address space, but rather with the actual allocations. My system runs out of memory a little after testlimit64 -t passes 270,000 threads created.
+
+
+What is a good way to send messages between threads?
+ANS:
+producer-consumer approach or using BlockingQueue
